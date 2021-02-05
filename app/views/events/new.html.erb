@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>New Event</h2>
+
+  <%= simple_form_for @event do |f| %>
+    <%= f.simple_fields_for :title do |title_f| %>
+        <%= title_f.input :en, input_html: { placeholder: 'title' }  %>
+        <%= title_f.input :it, input_html: { placeholder: 'titolo' }  %>
+    <% end %>
+    <%= f.simple_fields_for :description do |description_f| %>
+        <%= description_f.input :en, input_html: { placeholder: 'description' }  %>
+        <%= description_f.input :it, input_html: { placeholder: 'descrizione' } %>
+    <% end %>
+    <%= f.simple_fields_for :location do |location_f| %>
+        <%= location_f.input :en, input_html: { placeholder: 'location' } %>
+        <%= location_f.input :it, input_html: { placeholder: 'posizione' } %>
+    <% end %>
+    <%= f.button :submit, class: 'btn btn-dark' %>
+  <% end %>
+</div>

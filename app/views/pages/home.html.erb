@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if @event.nil? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1587380899631-a767a4a1611e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2852&q=80);">
+    <div class="container">
+      <h1>Amazing rock event --test</h1>
+      <p>Firenze --test</p>
+      <p>The Biggest Rock Band on Earth --test</p>
+      <a class="btn btn-warning" href="#">...</a>
+    </div>
+  </div>
+
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1587380899631-a767a4a1611e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2852&q=80);">
+    <div class="container">
+      <h1><%= @event.title["#{I18n.locale}"] %></h1>
+      <p><%= @event.location["#{I18n.locale}"] %></p>
+      <p><%= @event.description["#{I18n.locale}"] %></p>
+      <a class="btn btn-warning" href="#"><%= t :join %></a>
+    </div>
+  </div>
+
+<% end %>

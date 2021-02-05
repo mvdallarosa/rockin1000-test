@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand" href="/<%= I18n.locale %>">
     <strong>Rockin1000</strong>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,10 +10,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">EN</a>
+        <a class="nav-link btn btn-outline-danger" href="/en">EN</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">IT</a>
+      <li class="ml-2 nav-item">
+        <a class="nav-link btn btn-outline-primary" href="/it">IT</a>
+      </li>
+      <li class="ml-2 nav-item active">
+        <a class="nav-link btn btn-outline-info" href="/de">DE</a>
       </li>
       <li class="ml-2 nav-item dropdown">
         <%= link_to new_event_path do %><button class="btn btn-danger" aria-haspopup="true" aria-expanded="false">NEW EVENT</button><% end %>
